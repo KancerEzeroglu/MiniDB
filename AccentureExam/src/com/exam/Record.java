@@ -1,14 +1,15 @@
 package com.exam;
 
+import java.util.Date;
 
-public class Record {
+public class Record implements Comparable<Record>{
 //	 <Username>;<First Name>;<Last Name>;<Department>;<Account End Date>;<Telephone Number>
 
 	String userName;
 	String firstName;
 	String lastName;
 	String department;
-	String endDate;
+	Date endDate;
 	String telNum;
 	public String getUserName() {
 		return userName;
@@ -34,10 +35,10 @@ public class Record {
 	public void setDepartment(String department) {
 		this.department = department;
 	}
-	public String getEndDate() {
+	public Date getEndDate() {
 		return endDate;
 	}
-	public void setEndDate(String endDate) {
+	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
 	public String getTelNum() {
@@ -45,6 +46,15 @@ public class Record {
 	}
 	public void setTelNum(String telNum) {
 		this.telNum = telNum;
+	}
+	@Override
+	public int compareTo(Record objectToCompare) {
+		// TODO Auto-generated method stub
+		Date compareQuantity = ((Record) objectToCompare).getEndDate(); 
+		 
+		//ascending order
+		return this.endDate.compareTo(compareQuantity);
+		
 	}
 	
 }
