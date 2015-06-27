@@ -1,16 +1,17 @@
 package com.exam;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Record implements Comparable<Record>{
-//	 <Username>;<First Name>;<Last Name>;<Department>;<Account End Date>;<Telephone Number>
-
+public class Record{
+	
 	String userName;
 	String firstName;
 	String lastName;
 	String department;
 	Date endDate;
 	String telNum;
+	
 	public String getUserName() {
 		return userName;
 	}
@@ -48,13 +49,10 @@ public class Record implements Comparable<Record>{
 		this.telNum = telNum;
 	}
 	@Override
-	public int compareTo(Record objectToCompare) {
-		// TODO Auto-generated method stub
-		Date compareQuantity = ((Record) objectToCompare).getEndDate(); 
-		 
-		//ascending order
-		return this.endDate.compareTo(compareQuantity);
-		
+	public String toString() {
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		String endDate_format = formatter.format(endDate);
+		String str = userName + " " + firstName +" "+ lastName + " " + department + " " + endDate_format + " " + telNum;
+		return str;
 	}
-	
 }
