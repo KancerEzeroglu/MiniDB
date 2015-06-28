@@ -1,3 +1,5 @@
+This program is GPL Licenced.
+
 #                                               ~MINIDB~
 
 A simple in memory database implemented in this project.
