@@ -1,20 +1,35 @@
-#                                               ~MİNİDB~
+#**                                               ~MINIDB~
 
-Bu kucuk projede basit tablo içeren basit bir veritabanını yükleyeceğiz.
-Bu veritabanı CSV formatındaki dosyaları depolar. Bu dosyalarda her bir satır aşağıdaki formatta olmalıdır.
+A simple in memory database implemented in this project.
+
+Database has below features;
+ - data is loaded via csv files
+ - several query methods to query data on several fields
+ - simple index functionality is implemented
+ - querried data is sorted
+
 
 > ```<Username>;<First Name>;<Last Name>;<Department>;<Account End Date>;<Telephone Number>```
 
-Örnek içerkite şu şekilde olabilir;
-
+Sample data row is :
 cemadgzl;Ali;Veli;Sales;2015-12-31;+90 533 12345678
 
-Bu dosya içerisindeki bilgiler aşağıdaki kurallara uygun şekilde yüklenmelidir.
+Example code is written into  ExamMain method. Below section gives details about methods implemented. 
 
-1. Dosya UTF-8 formatında depolanmalıdır ve bazı alanlar non-ASCII karakterler içerebilir.
-2. 'username' alanı alfenumerik ASCII karakterlerini içermelidir ve 6 ile 10 karakter uzunluğunda olması gerekmektedir.
-3. 'firstname' ve lastname alanları alfenümerik karakterleri içermelidir, 30 byte'dan fazla olmamalı ve UTF-8 formatında olmalıdır.
-4. 'department' alanı basılabilir(printable) karakter içerebilir ve 20 byte'dan fazla olmamalı ve UTF-8 formatında olmalıdır.
-5. 'telephone' numbers alanı uluslararası önek ile başlamalı, boşluklar rakamlar arasında izin verilmeli ancak diğer özel karakterlere izin verilmemeli. Bu alanın kapasitesi 25 karakter olmalıdır.
-6. 'account end date' alanı ISO notasyonu şeklinde olmalıdır,yukarıdaki örnekte gösterildiği gibi. <year>-<month>-<day>
+##** int loadData(string fileName)
 
+Loads given csv file into database. Records in the file were checked by compliance with the six rules. At the end, returns the number of records loaded.
+The six rules are:
+
+* The file will be stored in UTF-8 format and may contain non-ASCII characters in some fields.
+* The username field may only contain alphanumeric ASCII characters and will be between 6
+and 10 characters long.
+* The first name and last name fields may contain sequences of alphabetic characters
+and will not be longer than 30 bytes UTF-8 encoded each.
+* The department field may contain any valid printable character and will not be longer
+than 20 bytes UTF-8 encoded.
+* The telephone numbers will be in the format shown above with the leading
+international prefix, spaces are allowed between the digits, but no other special characters.
+The field has a maximum capacity of 25 characters.
+* The account end date will be in ISO notation <year>-<month>-<day> as shown in
+the example.
