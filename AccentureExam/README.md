@@ -1,4 +1,4 @@
-#**                                               ~MINIDB~
+#                                               ~MINIDB~
 
 A simple in memory database implemented in this project.
 
@@ -16,7 +16,7 @@ cemadgzl;Ali;Veli;Sales;2015-12-31;+90 533 12345678
 
 Example code is written into  ExamMain method. Below section gives details about methods implemented. 
 
-##** int loadData(string fileName)
+##int loadData(string fileName)
 
 Loads given csv file into database. Records in the file were checked by compliance with the six rules. At the end, returns the number of records loaded.
 The six rules are:
