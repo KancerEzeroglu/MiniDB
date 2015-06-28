@@ -3,7 +3,7 @@
 Bu kucuk projede basit tablo içeren basit bir veritabanını yükleyeceğiz.
 Bu veritabanı CSV formatındaki dosyaları depolar. Bu dosyalarda her bir satır aşağıdaki formatta olmalıdır.
 
-> <Username>;<First Name>;<Last Name>;<Department>;<Account End Date>;<Telephone Number>
+> ```<Username>;<First Name>;<Last Name>;<Department>;<Account End Date>;<Telephone Number>```
 
 Örnek içerkite şu şekilde olabilir;
 
